@@ -9,6 +9,7 @@ public class Server {
 
 
 
+
     public static void main(String[] args) throws Exception {
         Key key = new Key();
         for (Integer integer : key.Keys) {
@@ -20,7 +21,7 @@ public class Server {
     }
 
     public static void connection() throws IOException, ClassNotFoundException {
-        serverSocket = new ServerSocket(2011);
+        serverSocket = new ServerSocket(port);
         while (true){
             System.out.println("Waiting for client ...");
             Socket socket = serverSocket.accept();
