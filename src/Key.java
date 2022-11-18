@@ -9,17 +9,15 @@ public class Key {
     };
 
 
-    public String check_key(int key){
-        if (Keys.contains(key)){
-            return("yes");
-        }
-        else {
-            return ("not");
-        }
+    public boolean check_key(int key){
+        return (Keys.contains(key));
     }
-    public void add_key(int key) throws Exception {
-        if (check_key(key) == "yes"){
+    public boolean add_key(int key) throws Exception {
+        if (check_key(key)){
             Keys.add(key);
+            return true;
+        } else {
+            return false;
         }
     }
     public void addKeys(){
