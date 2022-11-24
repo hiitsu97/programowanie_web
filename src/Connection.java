@@ -10,14 +10,13 @@ public class Connection {
     static ObjectOutputStream outputStream;
     static ObjectInputStream inputStream;
 
-    public void connect() throws IOException {
+    public void connect() throws IOException, ClassNotFoundException {
         socket = new Socket(InetAddress.getLocalHost(), 2011);
         outputStream = new ObjectOutputStream(socket.getOutputStream());
-        System.out.println(1);
+        requestBuilder.key_in(outputStream);
         inputStream = new ObjectInputStream(socket.getInputStream());
-        System.out.println(2);
-        String request = requestBuilder.setRequest();
-        System.out.println(3);
-        requestBuilder.key_in(request, outputStream);
+        String answer = (String) inputStream.readObject();
+        System.out.println("Mesage received: " + answer);
+        socket.close();
     }
 }

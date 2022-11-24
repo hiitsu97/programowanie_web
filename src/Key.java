@@ -2,29 +2,22 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Key {
-
-    public ArrayList<Integer> Keys = new ArrayList<>();
-    public Key(){
-        addKeys();
-    };
-
-
-    public boolean check_key(int key){
-        return (Keys.contains(key));
+    private int index;
+    private String password;
+    public Key(int index, String password){
+        this.index = index;
+        this.password = password;
     }
-    public boolean add_key(int key) throws Exception {
-        if (check_key(key)){
-            Keys.add(key);
-            return true;
-        } else {
-            return false;
-        }
+    public void setIndex(int index){
+        this.index = index;
     }
-    public void addKeys(){
-        for (int i = 0; i < 10; i++){
-            Random random = new Random();
-            int value = random.nextInt((999999999) + 100000000);
-            Keys.add(value);
-        }
+    public void setPassword(String password){
+        this. password = password;
+    }
+    public int getIndex(){
+        return index;
+    }
+    public String getPassword(){
+        return password;
     }
 }
