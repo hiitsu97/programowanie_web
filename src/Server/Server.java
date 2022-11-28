@@ -1,3 +1,5 @@
+package Server;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -22,6 +24,7 @@ public class Server {
             String request = (String) inputStream.readObject();
             String answer = requestHandler.handleRequest(request);
             System.out.println("Mesage received: " + request);
+            System.out.println("Mesage sent: " + answer);
             ObjectOutputStream outputStream = new ObjectOutputStream(socket.getOutputStream());
             outputStream.writeObject(answer);
             inputStream.close();

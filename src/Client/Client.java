@@ -1,5 +1,6 @@
+package Client;
+
 import java.io.IOException;
-import java.util.Scanner;
 
 public class Client {
     private static Connection connection;

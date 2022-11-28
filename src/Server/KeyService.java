@@ -1,5 +1,7 @@
+package Server;
+
 import java.util.ArrayList;
-import java.util.Random;
+
 
 public class KeyService {
     public ArrayList<Key> keys = new ArrayList<>();
@@ -14,21 +16,21 @@ public class KeyService {
         }
         return false;
     }
-    public void add_key(int key, String password) throws Exception {
-        if (!check_key(key)){
-            Key newKey = new Key(key, password);
+    public void add_key(int key) throws Exception {
+        if (!check_key(key)) {
+            Key newKey = new Key(key);
             keys.add(newKey);
         }
     }
     public void addKeys(){
-        Key key1 = new Key(669987963, "haslo123");
-        Key key2 = new Key(669987964, "haslo124");
-        Key key3 = new Key(669987965, "haslo125");
-        Key key4 = new Key(669987966, "haslo126");
-        Key key5 = new Key(669987967, "haslo127");
-        Key key6 = new Key(669987968, "haslo128");
-        Key key7 = new Key(669987969, "haslo129");
-        Key key8 = new Key(669987962, "haslo122");
+        Key key1 = new Key(669987963);
+        Key key2 = new Key(669987964);
+        Key key3 = new Key(669987965);
+        Key key4 = new Key(669987966);
+        Key key5 = new Key(669987967);
+        Key key6 = new Key(669987968);
+        Key key7 = new Key(669987969);
+        Key key8 = new Key(669987962);
 
         keys.add(key1);
         keys.add(key2);
